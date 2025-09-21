@@ -6,3 +6,5 @@ build/
 runs/
 *.proto
 *.o
+
+setup_instructions.txt
