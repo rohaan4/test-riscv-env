@@ -3,8 +3,6 @@
 .xmake
 .cache
 build/
-runs/
-*.proto
 *.o
 
 *.txt

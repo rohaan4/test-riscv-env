@@ -46,20 +46,33 @@ target_end()
 on_run(function (target)
     local targetfile = target:targetfile()
     local simulator = "/usr/local/bin/mpact_rv32g_sim"
-    local rundir = "./runs/run_" .. os.date("%Y%m%d_%H%M%S")
+    local rundir = "../../submit/exercises-c/05.oob-pointer-arithmetic/runs/run_" .. os.date("%Y%m%d_%H%M%S")
+    os.mkdir(rundir)
 
-    local args = {
+local args = {
         "--semihost_arm",
         "--output_dir=" .. rundir
     }
     if get_config("debug_run") == true then
         table.insert(args, "-i")
+        
+        
         print("Running in debug mode...")
+        local log_file = "../../submit/exercises-c/05.oob-pointer-arithmetic/debug"
+        local log_time = os.date("%Y-%m-%d %H:%M:%S")
+        local log_line = string.format("debug_time: %s\n", log_time)
+
+        local f = io.open(log_file, "a")
+        if f then
+            f:write(log_line)
+            f:close()
+        end
+
+        
     else
         print("Running in normal mode...")
     end
     table.insert(args, targetfile)
-    os.mkdir(rundir)
     os.execv(simulator, args)
 end)
 
