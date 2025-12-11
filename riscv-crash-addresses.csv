@@ -1,0 +1,16 @@
+riscv-c-01-heap-buffer-over-read,0x00010294
+riscv-c-02-heap-buffer-over-write,0x000102a8
+riscv-c-03-heap-buffer-under-write,0x0001029c
+riscv-c-04-stack-buffer-over-write,0x00010240
+riscv-c-05-oob-pointer-arithmetic,0x000102bc
+riscv-c-06-use-after-free,0x000102a4
+riscv-c-07-double-free,0x00010290
+riscv-c-08-type-confusion,0x00010230
+riscv-c++-01-heap-buffer-over-read,0x000109d4
+riscv-c++-02-heap-buffer-over-write,0x000109d0
+riscv-c++-03-heap-buffer-under-write,0x000109d0
+riscv-c++-04-stack-buffer-over-write,0x00010264
+riscv-c++-05-oob-pointer-arithmetic,0x000102d0
+riscv-c++-06-use-after-free,0x000109dc
+riscv-c++-07-double-free,0x000102d4
+riscv-c++-08-type-confusion,0x00010254
